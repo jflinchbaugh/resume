@@ -6,6 +6,7 @@ resume.pdf: resume.dvi
 
 resume.txt: resume.tex
 	pandoc -t plain resume.tex > resume.txt
+	sed 's!john@.*!john@hjsoft.com\ngithub.com/jflinchbaugh\nLancaster, PA, USA!' -i resume.txt
 
 resume.ps: resume.dvi
 	dvips resume.dvi
